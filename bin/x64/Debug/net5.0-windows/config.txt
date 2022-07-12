@@ -1,0 +1,5 @@
+﻿main_title=Simulare algoritmi C++
+page_title=Simularea executiei aplicatiilor C++
+page_description=Viitorul este acum
+delay_structuri=1
+delay_instructiuni=2

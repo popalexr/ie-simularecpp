@@ -1,0 +1,5 @@
+﻿main_title=Simulare algoritmi C++
+page_title=Simularea executiei aplicatiilor C++
+page_description=InfoEducatie 2022
+delay_structuri=3
+delay_instructiuni=3

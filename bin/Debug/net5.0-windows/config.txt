@@ -1,0 +1,3 @@
+﻿main_title=Simulare algoritmi C++
+page_title=Simularea executiei aplicatiilor C++
+page_description=Lorem Ipsum dollor sit amet

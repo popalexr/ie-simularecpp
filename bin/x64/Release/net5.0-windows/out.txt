@@ -1,0 +1,30 @@
+Reading symbols from C:\Users\Alex\source\repos\soft\soft\bin\x64\Release\net5.0-windows\main.exe...done.
+Breakpoint 1 at 0x401477: file main.cpp, line 12.
+[New Thread 20080.0x5ac4]
+[New Thread 20080.0x421c]
+[New Thread 20080.0x4e20]
+[New Thread 20080.0x3130]
+
+Breakpoint 1, main () at main.cpp:12
+12		fin >> a >> b;afis<<"a:"<<a<<endl; afis<<"b:"<<b<<endl; 
+13		while (a != b)
+15			if (a > b) {
+19				b -= a;afis<<"b:"<<b<<endl;
+13		while (a != b)
+22		fout << a; afis<<"consola:"<< a<<endl;
+23		return 0;
+24	}
+0x00401288 in _Jv_RegisterClasses ()
+Single stepping until exit from function _Jv_RegisterClasses,
+which has no line number information.
+0x0040128a in _Jv_RegisterClasses ()
+Single stepping until exit from function _Jv_RegisterClasses,
+which has no line number information.
+0x0040128f in _Jv_RegisterClasses ()
+Single stepping until exit from function _Jv_RegisterClasses,
+which has no line number information.
+0x00401292 in _Jv_RegisterClasses ()
+Single stepping until exit from function _Jv_RegisterClasses,
+which has no line number information.
+[Inferior 1 (process 20080) exited normally]
+(gdb) 
