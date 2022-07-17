@@ -164,10 +164,18 @@ namespace soft
             return -1;
         }
 
-        private bool isStructura(string txt)
+        public bool isStructura(string txt)
         {
             if (txt.Contains("while") || txt.Contains("if") || txt.Contains("else") || txt.Contains("switch") || txt.Contains("for") || txt.Contains("do")) return true;
             return false;
+        }
+
+        public string expresieStructura(string txt) //returneaza expresia dintr-o structura ( de pilda while(i!=0) => i!=0 )
+        {
+            string rezultat = "";
+            txt = txt.Replace("	", "").Replace(" ", "").Split("{")[0];//elimin posibilele caractere din expresie
+            if (txt.Contains("if(")) rezultat = txt.Split("if")[1]; //exista posibilitatea sa am ifstream => nu ar trebui sa dea split la acel text
+            return rezultat;
         }
 
         public string varName(string txt)
@@ -302,6 +310,15 @@ namespace soft
                             culoare = Color.Red;
                         }
                     }
+                    else if(program[i].Contains("if")) //linia contine if => am expresie Adevarat sau FALS
+                    {
+                        if (variabile[afisari].Contains("expresie(" + expresieStructura(program[i]) + ")")) // expresia este adevarata => color = green
+                        {
+                            afisari++;
+                            culoare = Color.LightGreen;
+                        }
+                        else culoare = Color.Red;
+                    }
                  
                 }
                 else
@@ -310,7 +327,7 @@ namespace soft
                     int afisari1 = program[i].Split("afis<<").Length - 1;
                     for (int ix = 0; ix < afisari1; ix++)
                     {
-                        vars += variabile[afisari] + "\n";
+                        if(!variabile[afisari].Contains("expresie")) vars += variabile[afisari] + "\n";
                         afisari++;
                     }
                     culoare = Color.Yellow;

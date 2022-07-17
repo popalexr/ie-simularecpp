@@ -8,18 +8,16 @@ using namespace std;
 
 int main()
 {
-	int a, b;
-	fin >> a >> b;afis<<"a:"<<a<<endl; afis<<"b:"<<b<<endl; 
-	while (a != b)
-	{
-		if (a > b) {
-			a -= b;afis<<"a:"<<a<<endl;
+	int n, k = 0;afis<<"k:"<<k<<endl;
+	fin >> n;afis<<"n:"<<n<<endl; 
+	do {
+		int uc = n % 10;afis<<"uc:"<<uc<<endl;
+		if (uc == 0) {afis<<"expresie((uc==0)):"<<(bool)(uc==0)<<endl;
+			k++;afis<<"k:"<<k<<endl;
 		}
-		else {
-			b -= a;afis<<"b:"<<b<<endl;
-		}
-	}
-	fout << a; afis<<"consola:"<< a<<endl;
+		n /= 10;afis<<"n:"<<n<<endl;
+	} while (n);
+	fout << k; afis<<"consola:"<< k<<endl;
 	return 0;
 }
 

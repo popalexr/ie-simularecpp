@@ -105,6 +105,10 @@ namespace soft
             string[] txt = algoritm.Split("\n");
             string[] vars = new string[200];
             int nr_vars = 0;
+            for (int i = 0; i <= 5; i++)
+            {
+                Config.tip_date[i] = 0;
+            }
             foreach (string v in txt)
             {
                 if (c.getDefVar(v) != "")
@@ -178,6 +182,10 @@ namespace soft
                     {
                         test[i] += "afis<<\"" + x[j] + ":\"<<" + x[j] + "<<endl; ";
                     }
+                }
+                else if(c.isStructura(test[i]) && c.expresieStructura(test[i]) != "") //determin daca expresia este adevarata sau falsa
+                {
+                    test[i] += "afis<<\"expresie(" + c.expresieStructura(test[i]) + "):\"<<(bool)" + c.expresieStructura(test[i]) + "<<endl;";
                 }
             }
 
